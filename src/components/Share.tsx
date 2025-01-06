@@ -1,8 +1,22 @@
+"use client";
+
+import React, { useState } from "react";
+
+import { shareAction } from "@/actions";
+
 import Image from "./Image";
 
 const Share = () => {
+  const [media, setMedia] = useState<File | null>(null);
+
+  const handleMediaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setMedia(e.target.files[0]);
+    }
+  };
+
   return (
-    <div className="flex gap-4 p-4">
+    <form className="flex gap-4 p-4" action={shareAction}>
       {/* AVATAR */}
       <div className="relative size-10 overflow-hidden rounded-full">
         <Image path="general/avatar.png" alt="avatar" w={100} h={100} tr />
@@ -12,18 +26,28 @@ const Share = () => {
       <div className="flex flex-1 flex-col gap-4">
         <input
           type="text"
+          name="desc"
           placeholder="What's on your mind?"
           className="bg-transparent text-xl outline-none placeholder:text-textGray"
         />
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-4">
-            <Image
-              path="icons/image.svg"
-              w={20}
-              h={20}
-              className="cursor-pointer"
-              alt="image"
+            <input
+              type="file"
+              name="file"
+              onChange={handleMediaChange}
+              className="hidden"
+              id="file"
             />
+            <label htmlFor="file">
+              <Image
+                path="icons/image.svg"
+                w={20}
+                h={20}
+                className="cursor-pointer"
+                alt="image"
+              />
+            </label>
             <Image
               path="icons/gif.svg"
               w={20}
@@ -65,7 +89,7 @@ const Share = () => {
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
