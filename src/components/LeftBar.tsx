@@ -11,7 +11,7 @@ const LeftBar = () => {
       <div className="flex flex-col items-center gap-2 text-base lg:gap-3 xxl:items-start xxl:gap-4">
         {/* LOGO */}
         <Link href="/" className="rounded-full p-2 hover:bg-[#181818]">
-          <Image path="x-clone/icons/logo.svg" alt="logo" w={24} h={24} />
+          <Image path="icons/logo.svg" alt="logo" w={24} h={24} />
         </Link>
 
         {/* MENU LIST */}
@@ -23,7 +23,7 @@ const LeftBar = () => {
               className="flex items-center gap-4 rounded-full p-2 hover:bg-[#181818]"
             >
               <Image
-                path={`x-clone/icons/${item.icon}`}
+                path={`icons/${item.icon}`}
                 alt={item.name}
                 w={24}
                 h={24}
@@ -38,7 +38,7 @@ const LeftBar = () => {
           href="/"
           className="flex size-12 items-center justify-center rounded-full bg-white text-black xxl:hidden"
         >
-          <Image path="x-clone/icons/post.svg" alt="new post" w={24} h={24} />
+          <Image path="icons/post.svg" alt="new post" w={24} h={24} />
         </Link>
         <Link
           href="/"
@@ -52,13 +52,7 @@ const LeftBar = () => {
       <div className="flex items-center justify-between rounded-full p-2 hover:bg-[#181818]">
         <div className="flex items-center gap-2">
           <div className="relative size-10 overflow-hidden rounded-full">
-            <Image
-              path="x-clone/general/avatar.png"
-              alt="avatar"
-              w={100}
-              h={100}
-              tr
-            />
+            <Image path="general/avatar.png" alt="avatar" w={100} h={100} tr />
           </div>
           <div className="hidden flex-col xxl:flex">
             <span className="font-bold">Ahsan Kabir</span>

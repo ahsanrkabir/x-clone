@@ -18,7 +18,7 @@ const Image = ({ path, w, h, className, alt, tr }: ImageType) => {
   return (
     <IKImage
       urlEndpoint={urlEndpoint}
-      path={path}
+      path={`x-clone/${path}`}
       {...(tr
         ? { transformation: [{ width: `${w}`, height: `${h}` }] }
         : { width: w, height: h })}

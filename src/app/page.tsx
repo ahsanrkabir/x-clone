@@ -6,6 +6,7 @@ import Share from "@/components/Share";
 const Homepage = () => {
   return (
     <div className="">
+      {/* TABS */}
       <div className="flex justify-evenly border-b border-borderGray px-4 pt-4 font-bold text-textGray">
         <Link
           href="/"
@@ -17,6 +18,7 @@ const Homepage = () => {
           Following
         </Link>
       </div>
+
       <Share />
       <Feed />
     </div>
